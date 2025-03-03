@@ -1,0 +1,47 @@
+#maindiv {
+    height: 110px;
+    background-image: url('/Header-bg.svg');
+    border-bottom-left-radius: 60px;
+  }
+  #subdiv {
+    position: relative;
+    top:0px;
+    padding-left: ;
+  }
+  a{
+    text-decoration: none;
+  }
+  .divs{
+
+  }
+  .logoimg {
+    width: 50px;
+    height: 50px;
+  }
+  #formdiv {
+    font-size: 17px;
+    width: 97%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  }
+  .left-column {
+    width: 40px;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  
+  .btn-custom {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 12px;
+  }
+  .divdiv{
+    margin-right: 100px;
+  }

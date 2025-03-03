@@ -1,0 +1,43 @@
+<div class="left-column ps-2">
+  <button class="btn" (click)="navigateToDashboard()">
+    <img src="/Dashboard-active.svg" style="width: 25px; height: 25px" alt="" />
+  </button>
+  <button class="btn mt-3" (click)="navigateToListingPage()">
+    <img
+      src="/Project-list-active.svg"
+      style="width: 25px; height: 25px"
+      alt=""
+    />
+  </button>
+  <button class="btn mt-3" (click)="navigateToCreateProject()">
+    <img
+      src="/create-project-active.svg"
+      style="width: 25px; height: 25px"
+      alt=""
+    />
+  </button>
+</div>
+<div class="ms-5 w-100" id="maindiv">
+    <a (click)="navigateToCreateProject()" class="text-white fs-5 ms-4"><img src="/back arrow.svg" alt="" style="width: 18px; height: 18px" />Create Project</a>
+    <img class="mt-4 mb-3 logoimg" style="width: 70%" src="/Logo.svg" alt="Logo" />
+  <div class="" id="subdiv">
+    
+    <div class="row w-100 divs">
+        <div class="col bg-light me-2 p-2">
+            <p>Total Projects</p>
+        </div>    
+        <div class="col bg-light me-2 ms-2 p-2">
+            <p>Closed</p>
+        </div>    
+        <div class="col bg-light me-2 ms-2 p-2">
+            <p>Running</p>
+        </div>    
+        <div class="col bg-light me-2 ms-2 p-2">
+            <p>Closure Delay</p>
+        </div>
+        <div class="col bg-light ms-2 p-2 "  >
+            <p>Cancelled</p>
+        </div>
+    </div>
+  </div>
+</div>

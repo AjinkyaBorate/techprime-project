@@ -1,0 +1,222 @@
+<div class="left-column ps-2">
+  <button class="btn" title="Dashboard" (click)="navigateToDashboard()">
+    <img src="/Dashboard-active.svg" style="width: 25px; height: 25px" alt="" />
+  </button>
+  <button class="btn mt-3" (click)="navigateToListingPage()" title="Go to Project Listing Page">
+    <img
+      src="/Project-list-active.svg"
+      style="width: 25px; height: 25px"
+      alt=""
+    />
+  </button>
+  <button class="btn mt-3" (click)="navigateToSamePage()" title="Create New Project">
+    <img
+      src="/create-project-active.svg"
+      style="width: 25px; height: 25px"
+      alt=""
+    />
+  </button>
+</div>
+
+<div class="ms-5" id="maindiv">
+  <div class="" id="subdiv">
+    <a (click)="navigateToSamePage()" class="text-white fs-5 ms-4" title="Go Back">
+      <img src="/back arrow.svg" alt="" style="width:18px;height: 18px;"> Create Project 
+    </a>
+    <img class="mt-4 logoimg" style="width: 70%" src="/Logo.svg" alt="Logo" />
+  <div class="mx-auto bg-light ps-2 pe-2 pt-3 pb-3 mt-4" id="formdiv">
+    <form [formGroup]="myform">
+      <div class="text text-secondary">
+        <div class="row ps-2">
+          <div class="col mb-3">
+            <textarea
+              cols="85"
+              rows="3"
+              class="form-control"
+              name=""
+              id=""
+              placeholder="Enter Project Name"
+              formControlName="pname"
+              title="Enter the name of the project"
+            ></textarea>
+            <div *ngIf="pname?.touched && pname?.invalid">
+              <p class="text-danger" *ngIf="pname?.errors?.['required']">
+                <small>*Project Name Required</small>
+              </p>
+            </div>
+          </div>
+          <div class="text-end pe-5 pt-3 col mb-3">
+            <button class="btn btn-primary btn-s rounded-pill ps-4 pe-4" id="btn1" (click)="saveproject()" [disabled]="!myform.valid" title="Save Project">
+              {{btnname}}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pe-5 divdiv">
+        <div class="row ps-2">
+          <div class="col mb-3">
+            <label class="form-lable text-secondary"><small>Reason</small></label>
+            <select
+              class="form-select"
+              formControlName="reason"
+              title="Select the reason for the project"
+            >
+              <option value="Business">For Business</option>
+              <option value="Personal">For Personal</option>
+              <option value="Dealership">For Dealership</option>
+              <option value="Transport">Transport</option>
+            </select>
+            <div *ngIf="reason?.touched && reason?.invalid">
+              <p class="text-danger" *ngIf="reason?.errors?.['required']">
+                <small>*Reason required</small>
+              </p>
+            </div>
+          </div>
+
+          <div class="col mb-3">
+            <label class="form-lable text-secondary"><small>Type</small></label>
+            <br />
+            <select
+              class="form-select"
+              formControlName="type"
+              title="Select project type"
+            >
+              <option value="Internal">Internal</option>
+              <option value="External">External</option>
+              <option value="Outsources">Outsources</option>
+              <option value="Contractual">Contractual</option>
+            </select>
+            <div *ngIf="type?.touched && type?.invalid">
+              <p class="text-danger" *ngIf="type?.errors?.['required']">
+                <small>*Type required</small>
+              </p>
+            </div>
+          </div>
+
+          <div class="col mb-3">
+            <label class="form-lable text-secondary"><small>Division</small></label>
+            <select
+              class="form-select"
+              formControlName="division"
+              title="Select division for the project"
+            >
+              <option value="Filters">Filters</option>
+              <option value="Matchers">Matchers</option>
+              <option value="Chatchers">Chatchers</option>
+            </select>
+            <div *ngIf="division?.touched && division?.invalid">
+              <p class="text-danger" *ngIf="division?.errors?.['required']">
+                <small>*Division required</small>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row ps-2">
+          <div class="col mb-4">
+            <label class="form-lable text-secondary"><small>Category</small></label>
+            <br />
+            <select
+              class="form-select"
+              formControlName="category"
+              title="Select project category"
+            >
+              <option value="A">Category A</option>
+              <option value="B">Category B</option>
+              <option value="C">Category C</option>
+            </select>
+
+            <div *ngIf="category?.touched && category?.invalid">
+              <p class="text-danger" *ngIf="category?.errors?.['required']">
+                <small>*Category required</small>
+              </p>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <label class="form-lable text-secondary"><small>Priority</small></label>
+            <select
+              class="form-select"
+              formControlName="priority"
+              title="Select project priority"
+            >
+              <option value="High">High</option>
+              <option value="Meddium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+            <div *ngIf="priority?.touched && priority?.invalid">
+              <p class="text-danger" *ngIf="priority?.errors?.['required']">
+                <small>*Priority required</small>
+              </p>
+            </div>
+          </div>
+          <div class="col mb-4">
+            <label class="form-lable text-secondary"><small>Department</small></label>
+            <select
+              class="form-select"
+              formControlName="department"
+              title="Select the department"
+            >
+              <option value="Strategy">Strategy</option>
+              <option value="Quality">Quality</option>
+              <option value="HR">HR</option>
+            </select>
+            <div *ngIf="department?.touched && department?.invalid">
+              <p class="text-danger" *ngIf="department?.errors?.['required']">
+                <small>*Department required</small>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row ps-2">
+          <div class="col mb-3">
+            <label class="form-lable text-secondary"><small>Start Date as per Project Plan</small></label>
+            <input type="date" class="form-control" title="Start date of the project" formControlName="sdate"/>
+            <div *ngIf="sdate?.touched && sdate?.invalid">
+              <p class="text-danger" *ngIf="sdate?.errors?.['required']">
+                <small>*Start date required</small>
+              </p>
+            </div>
+          </div>
+
+          <div class="col mb-3">
+            <label class="form-lable text-secondary"><small>End Date as per Project Plan</small></label>
+            <input type="date" class="form-control" title="End date of the project" formControlName="edate"/>
+            <div *ngIf="edate?.touched && edate?.invalid">
+              <p class="text-danger" *ngIf="edate?.errors?.['required']">
+                <small>*End date required</small>
+              </p>
+            </div>
+          </div>
+
+          <div class="col mb-3">
+            <label class="form-lable text-secondary"><small>Location</small></label>
+            <select
+              class="form-select"
+              formControlName="location"
+              title="Select project location"
+            >
+              <option value="Pune">Pune</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Ch.SmbhajiNagar">Ch. Smbhaji Nagar</option>
+            </select>
+            <div *ngIf="location?.touched && location?.invalid">
+              <p class="text-danger" *ngIf="location?.errors?.['required']">
+                <small>*Location required</small>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-3 status text-end">
+            <label class="form-lable text-start">
+                <small>Status: <b>Registered</b></small>
+            </label>
+          </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+</div>

@@ -1,0 +1,89 @@
+<div class="left-column ps-2">
+    <button class="btn" (click)="navigateToDashboard()">
+      <img src="/Dashboard-active.svg" style="width: 25px; height: 25px" alt="" />
+    </button>
+    <button class="btn mt-3" >
+      <img
+        src="/Project-list-active.svg"
+        style="width: 25px; height: 25px"
+        alt=""
+      />
+    </button>
+    <button class="btn mt-3" (click)="navigateToSamePage()">
+      <img
+        src="/create-project-active.svg"
+        style="width: 25px; height: 25px"
+        alt=""
+      />
+    </button>
+  </div>
+<div class="ms-5" id="maindiv">
+    <div class="" id="subdiv">
+      <a (click)="navigateToSamePage()" class="text-white fs-5 ms-4"><img src="/back arrow.svg" alt="" style="width:18px;height: 18px;" > Create Project </a>
+      <img class="mt-4 logoimg" style="width: 70%" src="/Logo.svg" alt="Logo" />
+      <div class="mx-auto bg-light pt-3 pb-3 mt-4 border" id="formdiv">
+
+        <div class="row d-flex align-items-center ps-2 pe-2">
+          <div class="col d-flex">
+            <input class="form-control" style="width: 40%;" type="search" placeholder="Search" aria-label="Search">
+          </div>
+          <div class="col d-flex justify-content-end">
+            <select class="form-select" style="width: 40%;" aria-label="Default select example">
+              <option selected>Choose</option>
+              <option value="Project Name">Project Name</option>
+              <option value="Reason">Reason</option>
+              <option value="Division">Division</option>
+              <option value="Category">Category</option>
+              <option value="Priority">Priority</option>
+              <option value="Dept">Dept</option>
+              <option value="Location">Location</option>
+
+            </select>
+          </div>
+        </div>
+        <div class="table-responsive" >
+          <table class="table mt-2 ps-5">
+            <thead>
+              <tr class="table-primary">
+                <th>Project Name</th>
+                <th>Reason</th>
+                <th>Type</th>
+                <th>Division</th>
+                <th>Category</th>
+                <th>Priority</th>
+                <th>Dept.</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of projects">
+                <td>{{i.pname}} <br>
+                  <small>{{i.sdate}} to {{i.edate}}</small>
+                </td>
+                <td>{{i.reason}}</td>
+                <td>{{i.type}}</td>
+                <td>{{i.division}}</td>
+                <td>{{i.category}}</td>
+                <td>{{i.priority}}</td>
+                <td>{{i.department}}</td>
+                <td>{{i.location}}</td>
+                <td>{{status}}</td>
+                <td>
+                  <button class="btn btn-primary rounded-pill btn-sm me-2">Start</button>
+                  <button class="btn btn-primary rounded-pill btn-sm me-2">Close</button>
+                  <button class="btn btn-primary rounded-pill btn-sm">Cancel</button>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+        </div>
+        
+      </div>
+
+
+
+
+    </div>
+</div>

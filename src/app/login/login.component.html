@@ -1,0 +1,52 @@
+<div class="" id="maindiv">
+  <div id="div2" class="text-light">
+    <img src="/Logo.svg" alt="Logo"/>
+    <p>Online Project Management</p>
+  </div>
+  <div class="mx-auto bg-light ps-3 pe-3 pt-4 pb-3" id="formdiv">
+    <form action="" [formGroup]="myform" (ngSubmit)="onSubmit()">
+      <div class="text-center text-secondary mt-3">
+        <h6>Login to get started</h6>
+      </div>
+      <br />
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label text-secondary"
+          >Email address</label
+        >
+        <input
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="xyz@example.com"
+          formControlName="username"
+        />
+        <div *ngIf="username?.touched && username?.invalid">
+          <p class="text-danger" *ngIf="username?.errors?.['required']">username is required</p>
+          <p class="text-danger" *ngIf="username?.errors?.['email']">username should be email address</p>        
+        </div>
+      </div>
+      <label for="inputPassword5" class="form-label text-secondary"
+        >Password</label
+      >
+      <input
+        type="password"
+        id="inputPassword5"
+        class="form-control"
+        aria-describedby="passwordHelpBlock"
+        formControlName="password"
+      />
+      <div *ngIf="password?.touched && password?.invalid">
+        <p class="text-danger" *ngIf="password?.errors?.['required']">Password is required</p>
+      </div>
+      <div class="text-end">
+        <a href="" class="text-primary text-decoration-none"
+          ><small>Forgot password?</small></a
+        ><br />
+      </div>
+      <br />
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary btn-sm w-50" id="btn" [disabled]="!myform.valid">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
